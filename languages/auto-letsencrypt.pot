@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Letsencrypt 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-letsencrypt\n"
-"POT-Creation-Date: 2017-10-03 23:32:08+00:00\n"
+"POT-Creation-Date: 2017-10-03 23:56:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,8 +18,8 @@ msgstr ""
 msgid "Auto Letsencrypt"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://gagan0123.com"
+#. Plugin URI of the plugin/theme
+msgid "https://gagan0123.com/auto-letsencrypt"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -28,4 +28,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Gagan Deep Singh"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://gagan0123.com"
 msgstr ""
