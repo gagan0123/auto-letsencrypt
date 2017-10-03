@@ -59,9 +59,9 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 
 			// We don't want to include archived, spammed or deleted sites for SSL.
 			$sites_args = array(
-				'archived'	 => 0,
-				'spam'		 => 0,
-				'deleted'	 => 0,
+				'archived'   => 0,
+				'spam'       => 0,
+				'deleted'    => 0,
 			);
 
 			$sites   = get_sites( $sites_args );
