@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:  Auto Letsencrypt
- * Plugin URI:   https://gagan0123.com
+ * Plugin URI:   https://gagan0123.com/auto-letsencrypt
  * Description:  Automatically add new domains to SSL Certificate
  * Version:      1.0.1
  * Author:       Gagan Deep Singh
