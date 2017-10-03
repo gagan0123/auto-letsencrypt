@@ -1,0 +1,24 @@
+{
+    "name": "auto-letsencrypt",
+    "version": "1.0.1",
+    "main": "auto-letsencrypt.php",
+    "repository": {
+        "type": "git",
+        "url": "https://git.gagan.pro/interactive-limited/landing/auto-letsencrypt"
+    },
+    "keywords": [
+        "wordpress"
+    ],
+    "bugs": {
+        "url": "https://git.gagan.pro/interactive-limited/landing/auto-letsencrypt/issues"
+    },
+    "author": "Gagan Deep Singh",
+    "license": "GPL-2.0",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-wp-i18n": "^1.0.0",
+        "grunt-wp-readme-to-markdown": "^2.0.1"
+    },
+    "dependencies": {}
+}
