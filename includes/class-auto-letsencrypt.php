@@ -15,7 +15,7 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 	/**
 	 * Main class of the plugin interacting with the WordPress.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 */
 	class Auto_Letsencrypt {
 
@@ -40,7 +40,7 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'wpmu_new_blog', array( $this, 'sync_certificates' ) );
-			// @todo Add all actions where domain can change.
+			add_action( 'refresh_blog_details', array( $this, 'sync_certificates' ) );
 		} // End __construct.
 
 		/**
@@ -57,7 +57,14 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 				return;
 			}
 
-			$sites   = get_sites();
+			// We don't want to include archived, spammed or deleted sites for SSL.
+			$sites_args = array(
+				'archived'	 => 0,
+				'spam'		 => 0,
+				'deleted'	 => 0,
+			);
+
+			$sites   = get_sites( $sites_args );
 			$domains = array_unique( array_map( array( $this, 'get_site_domain' ), $sites ) );
 
 			$args   = array();
@@ -74,6 +81,9 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 			// If domains are added or removed, lets expand.
 			$args[] = '--expand';
 
+			// Allowing to generate certificate even if some domains don't validate.
+			$args[] = '--allow-subset-of-names';
+
 			// Only review if new domains are added.
 			$args[] = '--renew-with-new-domains';
 
@@ -85,6 +95,9 @@ if ( ! class_exists( 'Auto_Letsencrypt' ) ) {
 
 			// Webroot path.
 			$args[] = '-w ' . ABSPATH;
+
+			// Forcing certificates to be in the same folder instead of new.
+			$args[] = '--cert-name ' . $domains[0];
 
 			// Lets add all domains/subdomains.
 			foreach ( $domains as $domain ) {
